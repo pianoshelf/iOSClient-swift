@@ -19,6 +19,13 @@
 		E01997771A2205F200DF0FE9 /* SheetmusicGridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01997761A2205F200DF0FE9 /* SheetmusicGridViewCell.swift */; };
 		E01997791A22077600DF0FE9 /* SidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01997781A22077600DF0FE9 /* SidePanelViewController.swift */; };
 		E019977C1A22126400DF0FE9 /* SheetmusicTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019977B1A22126400DF0FE9 /* SheetmusicTableViewController.swift */; };
+		E01997801A2228FD00DF0FE9 /* Sheetmusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019977F1A2228FD00DF0FE9 /* Sheetmusic.swift */; };
+		E01997901A2267FB00DF0FE9 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E01997891A22679000DF0FE9 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E01997921A22688500DF0FE9 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01997911A22688500DF0FE9 /* HTTPClient.swift */; };
+		E01997961A22846F00DF0FE9 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = E01997951A22846F00DF0FE9 /* circle.png */; };
+		E0D4F42C1A22A2EC00ABBE8D /* RootSheetmusicPagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D4F42B1A22A2EC00ABBE8D /* RootSheetmusicPagesViewController.swift */; };
+		E0D4F42E1A22A34D00ABBE8D /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D4F42D1A22A34D00ABBE8D /* DataViewController.swift */; };
+		E0D4F4301A22A35400ABBE8D /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D4F42F1A22A35400ABBE8D /* ModelController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +36,42 @@
 			remoteGlobalIDString = E01997451A22028300DF0FE9;
 			remoteInfo = Pianoshelf;
 		};
+		E01997881A22679000DF0FE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E01997831A22679000DF0FE9 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
+		E019978A1A22679000DF0FE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E01997831A22679000DF0FE9 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
+			remoteInfo = AlamofireTests;
+		};
+		E019978D1A2267CD00DF0FE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E01997831A22679000DF0FE9 /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E019978F1A2267D100DF0FE9 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E01997901A2267FB00DF0FE9 /* Alamofire.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E01997461A22028300DF0FE9 /* Pianoshelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pianoshelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +90,13 @@
 		E01997761A2205F200DF0FE9 /* SheetmusicGridViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetmusicGridViewCell.swift; sourceTree = "<group>"; };
 		E01997781A22077600DF0FE9 /* SidePanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidePanelViewController.swift; sourceTree = "<group>"; };
 		E019977B1A22126400DF0FE9 /* SheetmusicTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetmusicTableViewController.swift; sourceTree = "<group>"; };
+		E019977F1A2228FD00DF0FE9 /* Sheetmusic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sheetmusic.swift; sourceTree = "<group>"; };
+		E01997831A22679000DF0FE9 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = SOURCE_ROOT; };
+		E01997911A22688500DF0FE9 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		E01997951A22846F00DF0FE9 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = circle.png; path = ../../../Downloads/UICollectionView/UICollectionView/circle.png; sourceTree = "<group>"; };
+		E0D4F42B1A22A2EC00ABBE8D /* RootSheetmusicPagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootSheetmusicPagesViewController.swift; sourceTree = "<group>"; };
+		E0D4F42D1A22A34D00ABBE8D /* DataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataViewController.swift; path = ../../code/pagebased/pagebased/DataViewController.swift; sourceTree = "<group>"; };
+		E0D4F42F1A22A35400ABBE8D /* ModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelController.swift; path = ../../code/pagebased/pagebased/ModelController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +138,9 @@
 		E01997481A22028300DF0FE9 /* Pianoshelf */ = {
 			isa = PBXGroup;
 			children = (
-				E019977A1A22115600DF0FE9 /* Sheetmusic Browse */,
+				E0D4F4291A22A16A00ABBE8D /* Sheetmusic Pages */,
+				E019977E1A22289B00DF0FE9 /* API */,
+				E019977A1A22115600DF0FE9 /* Browse Sheetmusic */,
 				E019974B1A22028300DF0FE9 /* AppDelegate.swift */,
 				E01997701A22043100DF0FE9 /* ContainerViewController.swift */,
 				E01997781A22077600DF0FE9 /* SidePanelViewController.swift */,
@@ -98,6 +149,7 @@
 				E01997551A22028300DF0FE9 /* Images.xcassets */,
 				E01997571A22028300DF0FE9 /* LaunchScreen.xib */,
 				E019974D1A22028300DF0FE9 /* Pianoshelf.xcdatamodeld */,
+				E01997831A22679000DF0FE9 /* Alamofire.xcodeproj */,
 				E01997491A22028300DF0FE9 /* Supporting Files */,
 			);
 			path = Pianoshelf;
@@ -106,6 +158,7 @@
 		E01997491A22028300DF0FE9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E01997951A22846F00DF0FE9 /* circle.png */,
 				E019974A1A22028300DF0FE9 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -128,14 +181,42 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E019977A1A22115600DF0FE9 /* Sheetmusic Browse */ = {
+		E019977A1A22115600DF0FE9 /* Browse Sheetmusic */ = {
 			isa = PBXGroup;
 			children = (
+				E019977B1A22126400DF0FE9 /* SheetmusicTableViewController.swift */,
 				E01997741A22054400DF0FE9 /* SheetmusicGridViewController.swift */,
 				E01997761A2205F200DF0FE9 /* SheetmusicGridViewCell.swift */,
-				E019977B1A22126400DF0FE9 /* SheetmusicTableViewController.swift */,
 			);
-			name = "Sheetmusic Browse";
+			name = "Browse Sheetmusic";
+			sourceTree = "<group>";
+		};
+		E019977E1A22289B00DF0FE9 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E019977F1A2228FD00DF0FE9 /* Sheetmusic.swift */,
+				E01997911A22688500DF0FE9 /* HTTPClient.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		E01997841A22679000DF0FE9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E01997891A22679000DF0FE9 /* Alamofire.framework */,
+				E019978B1A22679000DF0FE9 /* AlamofireTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E0D4F4291A22A16A00ABBE8D /* Sheetmusic Pages */ = {
+			isa = PBXGroup;
+			children = (
+				E0D4F42B1A22A2EC00ABBE8D /* RootSheetmusicPagesViewController.swift */,
+				E0D4F42D1A22A34D00ABBE8D /* DataViewController.swift */,
+				E0D4F42F1A22A35400ABBE8D /* ModelController.swift */,
+			);
+			name = "Sheetmusic Pages";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,10 +229,12 @@
 				E01997421A22028300DF0FE9 /* Sources */,
 				E01997431A22028300DF0FE9 /* Frameworks */,
 				E01997441A22028300DF0FE9 /* Resources */,
+				E019978F1A2267D100DF0FE9 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E019978E1A2267CD00DF0FE9 /* PBXTargetDependency */,
 			);
 			name = Pianoshelf;
 			productName = Pianoshelf;
@@ -205,6 +288,12 @@
 			mainGroup = E019973D1A22028300DF0FE9;
 			productRefGroup = E01997471A22028300DF0FE9 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E01997841A22679000DF0FE9 /* Products */;
+					ProjectRef = E01997831A22679000DF0FE9 /* Alamofire.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				E01997451A22028300DF0FE9 /* Pianoshelf */,
@@ -212,6 +301,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E01997891A22679000DF0FE9 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = E01997881A22679000DF0FE9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E019978B1A22679000DF0FE9 /* AlamofireTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AlamofireTests.xctest;
+			remoteRef = E019978A1A22679000DF0FE9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E01997441A22028300DF0FE9 /* Resources */ = {
@@ -221,6 +327,7 @@
 				E01997541A22028300DF0FE9 /* Main.storyboard in Resources */,
 				E01997591A22028300DF0FE9 /* LaunchScreen.xib in Resources */,
 				E01997561A22028300DF0FE9 /* Images.xcassets in Resources */,
+				E01997961A22846F00DF0FE9 /* circle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,11 +345,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0D4F42C1A22A2EC00ABBE8D /* RootSheetmusicPagesViewController.swift in Sources */,
 				E01997771A2205F200DF0FE9 /* SheetmusicGridViewCell.swift in Sources */,
 				E019974F1A22028300DF0FE9 /* Pianoshelf.xcdatamodeld in Sources */,
 				E01997751A22054400DF0FE9 /* SheetmusicGridViewController.swift in Sources */,
+				E0D4F42E1A22A34D00ABBE8D /* DataViewController.swift in Sources */,
+				E0D4F4301A22A35400ABBE8D /* ModelController.swift in Sources */,
 				E01997791A22077600DF0FE9 /* SidePanelViewController.swift in Sources */,
 				E01997711A22043100DF0FE9 /* ContainerViewController.swift in Sources */,
+				E01997801A2228FD00DF0FE9 /* Sheetmusic.swift in Sources */,
+				E01997921A22688500DF0FE9 /* HTTPClient.swift in Sources */,
 				E019974C1A22028300DF0FE9 /* AppDelegate.swift in Sources */,
 				E01997731A22047500DF0FE9 /* CenterViewController.swift in Sources */,
 				E019977C1A22126400DF0FE9 /* SheetmusicTableViewController.swift in Sources */,
@@ -264,6 +376,11 @@
 			isa = PBXTargetDependency;
 			target = E01997451A22028300DF0FE9 /* Pianoshelf */;
 			targetProxy = E019975F1A22028300DF0FE9 /* PBXContainerItemProxy */;
+		};
+		E019978E1A2267CD00DF0FE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			targetProxy = E019978D1A2267CD00DF0FE9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

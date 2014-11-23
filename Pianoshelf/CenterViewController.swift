@@ -32,7 +32,7 @@ class CenterViewController: UIViewController, MenuViewControllerDelegate {
     // current state of navigation
     var currentState = CurrentMenuItemState.BrowseListView
     
-    let MARGIN_TOP : CGFloat = 70.0
+    let MARGIN_TOP : CGFloat = 120.0
 
     @IBOutlet weak var gridOrListViewLabel: UIBarButtonItem!
 
@@ -72,27 +72,47 @@ class CenterViewController: UIViewController, MenuViewControllerDelegate {
     }
     
     func addGridView() {
-        // Add the grid view
-        sheetmusicGridViewController = UIStoryboard.gridViewController()
-        sheetmusicGridViewController!.view.frame = CGRectMake(0, MARGIN_TOP, sheetmusicGridViewController!.view.frame.width, sheetmusicGridViewController!.view.frame.height)
-        addChildViewController(sheetmusicGridViewController!)
-        view.addSubview(sheetmusicGridViewController!.view)
-        sheetmusicGridViewController!.didMoveToParentViewController(self)
-        
-        currentState = CurrentMenuItemState.BrowseGridView
-        self.gridOrListViewLabel.title = "List View"
+        HTTPClient.sharedInstance.getTopSheetmusic() { (responseObject: NSArray?, error:NSError?) in
+            if ((error) != nil) {
+                
+            } else {
+                var sheetmusicList = [Sheetmusic]()
+                sheetmusicList = Sheetmusic.sheetmusicListWithJSON(responseObject!)
+
+                // Add the grid view
+                self.sheetmusicGridViewController = UIStoryboard.gridViewController()
+                self.sheetmusicGridViewController!.sheetmusicList = sheetmusicList
+                self.sheetmusicGridViewController!.view.frame = CGRectMake(0, self.MARGIN_TOP, self.sheetmusicGridViewController!.view.frame.width, self.sheetmusicGridViewController!.view.frame.height)
+                self.addChildViewController(self.sheetmusicGridViewController!)
+                self.view.addSubview(self.sheetmusicGridViewController!.view)
+                self.sheetmusicGridViewController!.didMoveToParentViewController(self)
+                
+                self.currentState = CurrentMenuItemState.BrowseGridView
+                self.gridOrListViewLabel.title = "List View"
+            }
+        }
     }
     
     func addListView() {
-        // Add the list view
-        sheetmusicListViewController = UIStoryboard.sheetmusicListController()
-        sheetmusicListViewController!.view.frame = CGRectMake(0, MARGIN_TOP, sheetmusicListViewController!.view.frame.width, sheetmusicListViewController!.view.frame.height)
-        addChildViewController(sheetmusicListViewController!)
-        view.addSubview(sheetmusicListViewController!.view)
-        sheetmusicListViewController!.didMoveToParentViewController(self)
-        
-        currentState = CurrentMenuItemState.BrowseListView
-        self.gridOrListViewLabel.title = "Grid View"
+        HTTPClient.sharedInstance.getTopSheetmusic() { (responseObject: NSArray?, error:NSError?) in
+            if ((error) != nil) {
+                
+            } else {
+                var sheetmusicList = [Sheetmusic]()
+                sheetmusicList = Sheetmusic.sheetmusicListWithJSON(responseObject!)
+
+                // Add the list view
+                self.sheetmusicListViewController = UIStoryboard.sheetmusicListController()
+                self.sheetmusicListViewController!.sheetmusicList = sheetmusicList
+                self.sheetmusicListViewController!.view.frame = CGRectMake(0, self.MARGIN_TOP, self.sheetmusicListViewController!.view.frame.width, self.sheetmusicListViewController!.view.frame.height)
+                self.addChildViewController(self.sheetmusicListViewController!)
+                self.view.addSubview(self.sheetmusicListViewController!.view)
+                self.sheetmusicListViewController!.didMoveToParentViewController(self)
+                
+                self.currentState = CurrentMenuItemState.BrowseListView
+                self.gridOrListViewLabel.title = "Grid View"
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {

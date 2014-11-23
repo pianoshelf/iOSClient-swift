@@ -9,13 +9,17 @@
 import UIKit
 
 class SheetmusicGridViewCell: UICollectionViewCell {
+
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
     let textLabel: UILabel!
-    let imageView: UIImageView!
     
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         

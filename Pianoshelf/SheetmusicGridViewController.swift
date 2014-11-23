@@ -7,11 +7,12 @@
 //
 
 import UIKit
-
-let reuseIdentifier = "SheetmusicGridViewCell"
+import Alamofire
 
 class SheetmusicGridViewController: UICollectionViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+    var sheetmusicList = [Sheetmusic]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,8 +20,7 @@ class SheetmusicGridViewController: UICollectionViewController, UICollectionView
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        //self.collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.greenColor()
         self.view.layoutMargins = UIEdgeInsetsMake(80, 0, 0, 0)
     }
 
@@ -49,15 +49,35 @@ class SheetmusicGridViewController: UICollectionViewController, UICollectionView
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //#warning Incomplete method implementation -- Return the number of items in the section
-        return 9
+        return sheetmusicList.count
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as SheetmusicGridViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("SheetmusicGridViewCell", forIndexPath: indexPath) as SheetmusicGridViewCell
+        
+        var sheetmusic = sheetmusicList[indexPath.row]
+        cell.titleLabel.text = sheetmusic.title
+        cell.descriptionLabel?.text = "\(sheetmusic.style) by \(sheetmusic.composerName)"
+        
+        // get the thumbnail image if cell exists
+        Alamofire.request(.GET, sheetmusic.thumbnailUrl)
+            .response{ (_ ,urlResponse, data, error) in
+                var image = UIImage(data: data as NSData)
+
+                dispatch_async(dispatch_get_main_queue(), {
+                    if let cellToUpdate = collectionView.cellForItemAtIndexPath(indexPath) as? SheetmusicGridViewCell {
+                        cellToUpdate.imageView?.image = image
+                    }
+                })
+        }
 
         return cell
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+    }
+    
     // MARK: UICollectionViewDelegate
 
     /*
