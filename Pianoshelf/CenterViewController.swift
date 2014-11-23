@@ -27,11 +27,13 @@ class CenterViewController: UIViewController, MenuViewControllerDelegate {
     var delegate: CenterViewControllerDelegate?
 
     var sheetmusicGridViewController : SheetmusicGridViewController?
-    var sheetmusicListViewController : UITableViewController?
+    var sheetmusicListViewController : SheetmusicTableViewController?
     
     // current state of navigation
     var currentState = CurrentMenuItemState.BrowseListView
     
+    let MARGIN_TOP : CGFloat = 70.0
+
     @IBOutlet weak var gridOrListViewLabel: UIBarButtonItem!
 
     @IBAction func toggleSideMenu(sender: AnyObject) {
@@ -42,38 +44,57 @@ class CenterViewController: UIViewController, MenuViewControllerDelegate {
 
     @IBAction func sheetmusicViewToggled(sender: AnyObject) {
         if (currentState == CurrentMenuItemState.BrowseListView) {
-            sheetmusicGridViewController = UIStoryboard.gridViewController()
             
             // Remove the list view and view from self
+            if let listView = self.sheetmusicListViewController {
+                listView.removeFromParentViewController()
+                listView.view.removeFromSuperview()
+            }
             
-            // Add the grid view
-            addChildViewController(sheetmusicGridViewController!)
-            view.addSubview(sheetmusicGridViewController!.view)
-            sheetmusicGridViewController!.didMoveToParentViewController(self)
-            
-            currentState = CurrentMenuItemState.BrowseGridView
-            self.gridOrListViewLabel.title = "List View"
-            println("switch to grid")
+            addGridView()
         }
         else if (currentState == CurrentMenuItemState.BrowseGridView) {
             
             // Remove the grid view controller and view from self
-            self.sheetmusicGridViewController?.removeFromParentViewController()
-            self.sheetmusicGridViewController?.view.removeFromSuperview()
-            
-            // Add the list view
-            
-            currentState = CurrentMenuItemState.BrowseListView
-            self.gridOrListViewLabel.title = "Grid View"
-            println("switch to list")
+            if let gridView = self.sheetmusicGridViewController {
+                gridView.removeFromParentViewController()
+                gridView.view.removeFromSuperview()
+            }
+
+            addListView()
         }
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        addListView()
         // Do any additional setup after loading the view.
     }
-
+    
+    func addGridView() {
+        // Add the grid view
+        sheetmusicGridViewController = UIStoryboard.gridViewController()
+        sheetmusicGridViewController!.view.frame = CGRectMake(0, MARGIN_TOP, sheetmusicGridViewController!.view.frame.width, sheetmusicGridViewController!.view.frame.height)
+        addChildViewController(sheetmusicGridViewController!)
+        view.addSubview(sheetmusicGridViewController!.view)
+        sheetmusicGridViewController!.didMoveToParentViewController(self)
+        
+        currentState = CurrentMenuItemState.BrowseGridView
+        self.gridOrListViewLabel.title = "List View"
+    }
+    
+    func addListView() {
+        // Add the list view
+        sheetmusicListViewController = UIStoryboard.sheetmusicListController()
+        sheetmusicListViewController!.view.frame = CGRectMake(0, MARGIN_TOP, sheetmusicListViewController!.view.frame.width, sheetmusicListViewController!.view.frame.height)
+        addChildViewController(sheetmusicListViewController!)
+        view.addSubview(sheetmusicListViewController!.view)
+        sheetmusicListViewController!.didMoveToParentViewController(self)
+        
+        currentState = CurrentMenuItemState.BrowseListView
+        self.gridOrListViewLabel.title = "Grid View"
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -103,6 +124,9 @@ private extension UIStoryboard {
     class func mainStoryboard() -> UIStoryboard { return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()) }
     
     class func gridViewController() -> SheetmusicGridViewController? {
-        return mainStoryboard().instantiateViewControllerWithIdentifier("GridView") as? SheetmusicGridViewController
+        return mainStoryboard().instantiateViewControllerWithIdentifier("SheetmusicGridView") as? SheetmusicGridViewController
+    }
+    class func sheetmusicListController() -> SheetmusicTableViewController? {
+        return mainStoryboard().instantiateViewControllerWithIdentifier("SheetmusicListView") as? SheetmusicTableViewController
     }
 }

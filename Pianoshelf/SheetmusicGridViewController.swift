@@ -22,7 +22,6 @@ class SheetmusicGridViewController: UICollectionViewController, UICollectionView
         //self.collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         self.view.backgroundColor = UIColor.whiteColor()
         self.view.layoutMargins = UIEdgeInsetsMake(80, 0, 0, 0)
-        
     }
 
     override func didReceiveMemoryWarning() {
