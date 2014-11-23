@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootSheetmusicPagesViewController: UIViewController {
+class RootSheetmusicPagesViewController: UIViewController, UIPageViewControllerDelegate {
     
     var pageViewController: UIPageViewController?
     

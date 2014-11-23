@@ -68,7 +68,12 @@ class CenterViewController: UIViewController, MenuViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         addListView()
+
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        println("Center view appeared")
     }
     
     func addGridView() {

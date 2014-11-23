@@ -257,7 +257,7 @@
         <!--Data View Controller-->
         <scene sceneID="c8C-qP-bOz">
             <objects>
-                <viewController id="FCX-Yi-mZA" customClass="DataViewController" customModule="Pianoshelf" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DataViewController" id="FCX-Yi-mZA" customClass="DataViewController" customModule="Pianoshelf" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vhp-Oa-yAT"/>
                         <viewControllerLayoutGuide type="bottom" id="EaF-BP-UQP"/>
@@ -265,7 +265,7 @@
                     <view key="view" contentMode="scaleToFill" id="xCY-wL-vlU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.9925160317407894" green="0.98441763494097834" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ctD-ai-a26" userLabel="First Responder" sceneMemberID="firstResponder"/>
