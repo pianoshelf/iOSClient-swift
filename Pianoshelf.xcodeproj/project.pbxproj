@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E0053D411A26E2F500CF4A68 /* trolley.png in Resources */ = {isa = PBXBuildFile; fileRef = E0053D401A26E2F500CF4A68 /* trolley.png */; };
+		E0053D441A26E3BE00CF4A68 /* globe-50.png in Resources */ = {isa = PBXBuildFile; fileRef = E0053D431A26E3BE00CF4A68 /* globe-50.png */; };
 		E019974C1A22028300DF0FE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019974B1A22028300DF0FE9 /* AppDelegate.swift */; };
 		E019974F1A22028300DF0FE9 /* Pianoshelf.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E019974D1A22028300DF0FE9 /* Pianoshelf.xcdatamodeld */; };
 		E01997541A22028300DF0FE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E01997521A22028300DF0FE9 /* Main.storyboard */; };
 		E01997561A22028300DF0FE9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E01997551A22028300DF0FE9 /* Images.xcassets */; };
 		E01997591A22028300DF0FE9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E01997571A22028300DF0FE9 /* LaunchScreen.xib */; };
 		E01997651A22028300DF0FE9 /* PianoshelfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01997641A22028300DF0FE9 /* PianoshelfTests.swift */; };
-		E01997711A22043100DF0FE9 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01997701A22043100DF0FE9 /* ContainerViewController.swift */; };
 		E01997731A22047500DF0FE9 /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01997721A22047500DF0FE9 /* CenterViewController.swift */; };
 		E01997751A22054400DF0FE9 /* SheetmusicGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01997741A22054400DF0FE9 /* SheetmusicGridViewController.swift */; };
 		E01997771A2205F200DF0FE9 /* SheetmusicGridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01997761A2205F200DF0FE9 /* SheetmusicGridViewCell.swift */; };
-		E01997791A22077600DF0FE9 /* SidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01997781A22077600DF0FE9 /* SidePanelViewController.swift */; };
 		E019977C1A22126400DF0FE9 /* SheetmusicTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019977B1A22126400DF0FE9 /* SheetmusicTableViewController.swift */; };
 		E01997801A2228FD00DF0FE9 /* Sheetmusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019977F1A2228FD00DF0FE9 /* Sheetmusic.swift */; };
 		E01997901A2267FB00DF0FE9 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E01997891A22679000DF0FE9 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -74,6 +74,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E0053D401A26E2F500CF4A68 /* trolley.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = trolley.png; path = ../../../Downloads/trolley.png; sourceTree = "<group>"; };
+		E0053D431A26E3BE00CF4A68 /* globe-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "globe-50.png"; sourceTree = "<group>"; };
 		E01997461A22028300DF0FE9 /* Pianoshelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pianoshelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E019974A1A22028300DF0FE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E019974B1A22028300DF0FE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,11 +86,9 @@
 		E019975E1A22028300DF0FE9 /* PianoshelfTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PianoshelfTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E01997631A22028300DF0FE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E01997641A22028300DF0FE9 /* PianoshelfTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoshelfTests.swift; sourceTree = "<group>"; };
-		E01997701A22043100DF0FE9 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		E01997721A22047500DF0FE9 /* CenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterViewController.swift; sourceTree = "<group>"; };
 		E01997741A22054400DF0FE9 /* SheetmusicGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetmusicGridViewController.swift; sourceTree = "<group>"; };
 		E01997761A2205F200DF0FE9 /* SheetmusicGridViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetmusicGridViewCell.swift; sourceTree = "<group>"; };
-		E01997781A22077600DF0FE9 /* SidePanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidePanelViewController.swift; sourceTree = "<group>"; };
 		E019977B1A22126400DF0FE9 /* SheetmusicTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetmusicTableViewController.swift; sourceTree = "<group>"; };
 		E019977F1A2228FD00DF0FE9 /* Sheetmusic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sheetmusic.swift; sourceTree = "<group>"; };
 		E01997831A22679000DF0FE9 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -142,8 +142,6 @@
 				E019977E1A22289B00DF0FE9 /* API */,
 				E019977A1A22115600DF0FE9 /* Browse Sheetmusic */,
 				E019974B1A22028300DF0FE9 /* AppDelegate.swift */,
-				E01997701A22043100DF0FE9 /* ContainerViewController.swift */,
-				E01997781A22077600DF0FE9 /* SidePanelViewController.swift */,
 				E01997721A22047500DF0FE9 /* CenterViewController.swift */,
 				E01997521A22028300DF0FE9 /* Main.storyboard */,
 				E01997551A22028300DF0FE9 /* Images.xcassets */,
@@ -158,7 +156,9 @@
 		E01997491A22028300DF0FE9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E0053D431A26E3BE00CF4A68 /* globe-50.png */,
 				E01997951A22846F00DF0FE9 /* circle.png */,
+				E0053D401A26E2F500CF4A68 /* trolley.png */,
 				E019974A1A22028300DF0FE9 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -324,10 +324,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0053D441A26E3BE00CF4A68 /* globe-50.png in Resources */,
 				E01997541A22028300DF0FE9 /* Main.storyboard in Resources */,
 				E01997591A22028300DF0FE9 /* LaunchScreen.xib in Resources */,
 				E01997561A22028300DF0FE9 /* Images.xcassets in Resources */,
 				E01997961A22846F00DF0FE9 /* circle.png in Resources */,
+				E0053D411A26E2F500CF4A68 /* trolley.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,8 +353,6 @@
 				E01997751A22054400DF0FE9 /* SheetmusicGridViewController.swift in Sources */,
 				E0D4F42E1A22A34D00ABBE8D /* DataViewController.swift in Sources */,
 				E0D4F4301A22A35400ABBE8D /* ModelController.swift in Sources */,
-				E01997791A22077600DF0FE9 /* SidePanelViewController.swift in Sources */,
-				E01997711A22043100DF0FE9 /* ContainerViewController.swift in Sources */,
 				E01997801A2228FD00DF0FE9 /* Sheetmusic.swift in Sources */,
 				E01997921A22688500DF0FE9 /* HTTPClient.swift in Sources */,
 				E019974C1A22028300DF0FE9 /* AppDelegate.swift in Sources */,

@@ -8,23 +8,13 @@
 
 import UIKit
 
-@objc
-protocol CenterViewControllerDelegate {
-    optional func toggleLeftPanel()
-    optional func collapseSidePanels()
-}
-
 // The current menu item
 enum CurrentMenuItemState {
     case BrowseListView
     case BrowseGridView
-    case Shelf
-    case Profile
 }
 
-class CenterViewController: UIViewController, MenuViewControllerDelegate {
-
-    var delegate: CenterViewControllerDelegate?
+class CenterViewController: UIViewController {
 
     var sheetmusicGridViewController : SheetmusicGridViewController?
     var sheetmusicListViewController : SheetmusicTableViewController?
@@ -35,13 +25,7 @@ class CenterViewController: UIViewController, MenuViewControllerDelegate {
     let MARGIN_TOP : CGFloat = 120.0
 
     @IBOutlet weak var gridOrListViewLabel: UIBarButtonItem!
-
-    @IBAction func toggleSideMenu(sender: AnyObject) {
-        if let d = delegate {
-            d.toggleLeftPanel?()
-        }
-    }
-
+   
     @IBAction func sheetmusicViewToggled(sender: AnyObject) {
         if (currentState == CurrentMenuItemState.BrowseListView) {
             
@@ -65,10 +49,12 @@ class CenterViewController: UIViewController, MenuViewControllerDelegate {
         }
     }
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         addListView()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -87,7 +73,7 @@ class CenterViewController: UIViewController, MenuViewControllerDelegate {
                 // Add the grid view
                 self.sheetmusicGridViewController = UIStoryboard.gridViewController()
                 self.sheetmusicGridViewController!.sheetmusicList = sheetmusicList
-                self.sheetmusicGridViewController!.view.frame = CGRectMake(0, self.MARGIN_TOP, self.sheetmusicGridViewController!.view.frame.width, self.sheetmusicGridViewController!.view.frame.height)
+                self.sheetmusicGridViewController!.view.frame = CGRectMake(0, self.MARGIN_TOP, self.sheetmusicGridViewController!.view.frame.width, self.sheetmusicGridViewController!.view.frame.height - 20)
                 self.addChildViewController(self.sheetmusicGridViewController!)
                 self.view.addSubview(self.sheetmusicGridViewController!.view)
                 self.sheetmusicGridViewController!.didMoveToParentViewController(self)
@@ -97,7 +83,7 @@ class CenterViewController: UIViewController, MenuViewControllerDelegate {
             }
         }
     }
-    
+
     func addListView() {
         HTTPClient.sharedInstance.getTopSheetmusic() { (responseObject: NSArray?, error:NSError?) in
             if ((error) != nil) {
@@ -109,7 +95,7 @@ class CenterViewController: UIViewController, MenuViewControllerDelegate {
                 // Add the list view
                 self.sheetmusicListViewController = UIStoryboard.sheetmusicListController()
                 self.sheetmusicListViewController!.sheetmusicList = sheetmusicList
-                self.sheetmusicListViewController!.view.frame = CGRectMake(0, self.MARGIN_TOP, self.sheetmusicListViewController!.view.frame.width, self.sheetmusicListViewController!.view.frame.height)
+                self.sheetmusicListViewController!.view.frame = CGRectMake(0, self.MARGIN_TOP, self.sheetmusicListViewController!.view.frame.width, self.sheetmusicListViewController!.view.frame.height - 20)
                 self.addChildViewController(self.sheetmusicListViewController!)
                 self.view.addSubview(self.sheetmusicListViewController!.view)
                 self.sheetmusicListViewController!.didMoveToParentViewController(self)
@@ -124,25 +110,7 @@ class CenterViewController: UIViewController, MenuViewControllerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func menuItemSelected(itemIndex: Int) {
-        switch(itemIndex) {
-        case 0:
-            // Browse
-            
-            break
-        case 1:
-            // My shelf
-            break
-        case 2:
-            // profile
-            break
-        default:
-            //
-            break
-        }
-    }
-    
+
 }
 
 private extension UIStoryboard {
