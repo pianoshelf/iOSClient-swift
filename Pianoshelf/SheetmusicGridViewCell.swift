@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SheetmusicGridViewCell: UICollectionViewCell {
+class SheetmusicGridViewCell: UICollectionViewCell, UIGestureRecognizerDelegate {
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -22,6 +22,8 @@ class SheetmusicGridViewCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+
+        self.userInteractionEnabled = true
     }
+    
 }

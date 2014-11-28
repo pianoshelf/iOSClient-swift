@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 
 typealias ListResponse = (NSArray?, NSError?) -> Void
+typealias ObjectResponse = (NSObject?, NSError?) -> Void
 
 class HTTPClient {
     //let baseUrl = "http://localhost:5000/api/"
@@ -30,4 +31,18 @@ class HTTPClient {
                 onCompletion(results, nil)
         }
     }
+
+    func getSheetmusicDetail(id : Int, onCompletion: ObjectResponse) -> Void {
+        
+        var endpoint = baseUrl + "sheetmusic/\(id)/"
+        
+        Alamofire.request(.GET, endpoint)
+            .responseJSON { (_, _, JSON, _) in
+
+                let result = JSON as NSObject
+
+                onCompletion(result, nil)
+        }
+    }
+    
 }

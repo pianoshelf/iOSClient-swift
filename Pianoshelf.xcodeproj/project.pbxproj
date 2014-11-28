@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E0053D411A26E2F500CF4A68 /* trolley.png in Resources */ = {isa = PBXBuildFile; fileRef = E0053D401A26E2F500CF4A68 /* trolley.png */; };
 		E0053D441A26E3BE00CF4A68 /* globe-50.png in Resources */ = {isa = PBXBuildFile; fileRef = E0053D431A26E3BE00CF4A68 /* globe-50.png */; };
+		E0053D471A28423500CF4A68 /* SheetmusicPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0053D461A28423500CF4A68 /* SheetmusicPage.swift */; };
 		E019974C1A22028300DF0FE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019974B1A22028300DF0FE9 /* AppDelegate.swift */; };
 		E019974F1A22028300DF0FE9 /* Pianoshelf.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E019974D1A22028300DF0FE9 /* Pianoshelf.xcdatamodeld */; };
 		E01997541A22028300DF0FE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E01997521A22028300DF0FE9 /* Main.storyboard */; };
@@ -76,6 +77,7 @@
 /* Begin PBXFileReference section */
 		E0053D401A26E2F500CF4A68 /* trolley.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = trolley.png; path = ../../../Downloads/trolley.png; sourceTree = "<group>"; };
 		E0053D431A26E3BE00CF4A68 /* globe-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "globe-50.png"; sourceTree = "<group>"; };
+		E0053D461A28423500CF4A68 /* SheetmusicPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetmusicPage.swift; sourceTree = "<group>"; };
 		E01997461A22028300DF0FE9 /* Pianoshelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pianoshelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E019974A1A22028300DF0FE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E019974B1A22028300DF0FE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				E019977F1A2228FD00DF0FE9 /* Sheetmusic.swift */,
+				E0053D461A28423500CF4A68 /* SheetmusicPage.swift */,
 				E01997911A22688500DF0FE9 /* HTTPClient.swift */,
 			);
 			name = API;
@@ -213,8 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				E0D4F42B1A22A2EC00ABBE8D /* RootSheetmusicPagesViewController.swift */,
-				E0D4F42D1A22A34D00ABBE8D /* DataViewController.swift */,
 				E0D4F42F1A22A35400ABBE8D /* ModelController.swift */,
+				E0D4F42D1A22A34D00ABBE8D /* DataViewController.swift */,
 			);
 			name = "Sheetmusic Pages";
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				E01997751A22054400DF0FE9 /* SheetmusicGridViewController.swift in Sources */,
 				E0D4F42E1A22A34D00ABBE8D /* DataViewController.swift in Sources */,
 				E0D4F4301A22A35400ABBE8D /* ModelController.swift in Sources */,
+				E0053D471A28423500CF4A68 /* SheetmusicPage.swift in Sources */,
 				E01997801A2228FD00DF0FE9 /* Sheetmusic.swift in Sources */,
 				E01997921A22688500DF0FE9 /* HTTPClient.swift in Sources */,
 				E019974C1A22028300DF0FE9 /* AppDelegate.swift in Sources */,

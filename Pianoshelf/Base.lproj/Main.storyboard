@@ -99,16 +99,16 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N6i-Ec-e3U">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="300"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vo-6U-6u7">
-                                            <rect key="frame" x="8" y="303" width="224" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ecu-I1-U8L">
                                             <rect key="frame" x="8" y="327" width="224" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vo-6U-6u7">
+                                            <rect key="frame" x="8" y="303" width="224" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -119,7 +119,6 @@
                                     <outlet property="descriptionLabel" destination="Ecu-I1-U8L" id="8VY-jY-ryL"/>
                                     <outlet property="imageView" destination="N6i-Ec-e3U" id="vG9-kO-LUi"/>
                                     <outlet property="titleLabel" destination="3vo-6U-6u7" id="12G-gf-BUd"/>
-                                    <segue destination="RWp-Pw-Mc5" kind="show" id="u4i-jf-sYD"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -128,6 +127,9 @@
                             <outlet property="delegate" destination="5oC-Zf-Frb" id="IxP-8l-IeV"/>
                         </connections>
                     </collectionView>
+                    <connections>
+                        <segue destination="RWp-Pw-Mc5" kind="showDetail" identifier="gridToDetail" id="tgx-xl-VON"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vK4-02-ex3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -180,9 +182,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="RWp-Pw-Mc5" kind="show" id="de9-er-Kr2"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -190,6 +189,9 @@
                             <outlet property="delegate" destination="Nmc-vr-gUJ" id="Jhw-vl-jx8"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="RWp-Pw-Mc5" kind="showDetail" identifier="listToDetail" id="rVv-WC-lMV"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="stX-WV-Zen" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -198,7 +200,7 @@
         <!--Root Sheetmusic Pages View Controller-->
         <scene sceneID="ao9-EY-sYY">
             <objects>
-                <viewController id="RWp-Pw-Mc5" customClass="RootSheetmusicPagesViewController" customModule="Pianoshelf" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="sheetmusicdetail" id="RWp-Pw-Mc5" customClass="RootSheetmusicPagesViewController" customModule="Pianoshelf" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="n2f-cA-EBc"/>
                         <viewControllerLayoutGuide type="bottom" id="JRA-dg-XsI"/>
@@ -236,6 +238,6 @@
         <image name="globe-50.png" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="u4i-jf-sYD"/>
+        <segue reference="rVv-WC-lMV"/>
     </inferredMetricsTieBreakers>
 </document>

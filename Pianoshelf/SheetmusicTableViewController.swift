@@ -10,12 +10,13 @@ import UIKit
 
 
 class SheetmusicTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
-    
+
     var sheetmusicList = [Sheetmusic]()
+    
+    var imageData = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -32,8 +33,34 @@ class SheetmusicTableViewController: UITableViewController, UITableViewDataSourc
         return cell
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var sheetmusic = sheetmusicList[indexPath.row]
         
+        HTTPClient.sharedInstance.getSheetmusicDetail(sheetmusic.id){ (responseObject: NSObject?, error:NSError?) in
+            
+            var imagesResp = responseObject!.valueForKey("images") as NSArray
+            var imageList = SheetmusicPages.sheetmusicPagesWithJSON(imagesResp)
+            
+            self.imageData = imageList
+            self.performSegueWithIdentifier("listToDetail", sender: self)
+        }
+    }
+    
+    // this method mush be in first view controller
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+            if segue.identifier == "listToDetail"{
+                var rootViewCtrl = segue.destinationViewController as RootSheetmusicPagesViewController
+                
+                var indexPath = self.tableView.indexPathForSelectedRow() //get index of data for selected row
+                var sheetmusic = sheetmusicList[indexPath!.row]
+    
+                // create the model controller with the page data
+                var modelCtrl = ModelController()
+                modelCtrl.pageData = imageData
+                
+                // inject the model controller
+                rootViewCtrl._modelController = modelCtrl
+            }
     }
     
 }

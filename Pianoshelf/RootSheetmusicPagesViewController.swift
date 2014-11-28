@@ -9,10 +9,20 @@
 import UIKit
 
 class RootSheetmusicPagesViewController: UIViewController, UIPageViewControllerDelegate {
-    
+
     var pageViewController: UIPageViewController?
-    
-    
+
+    var modelController: ModelController {
+        // Return the model controller object, creating it if necessary.
+        // In more complex implementations, the model controller may be passed to the view controller.
+        if _modelController == nil {
+            _modelController = ModelController()
+        }
+        return _modelController!
+    }
+
+    var _modelController: ModelController? = nil
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -49,7 +59,6 @@ class RootSheetmusicPagesViewController: UIViewController, UIPageViewControllerD
         // Add the page view controller's gesture recognizers to the book view controller's view so that the gestures are started more easily.
         self.view.gestureRecognizers = self.pageViewController!.gestureRecognizers
         
-        
         // close button
 
         var closeButton = UIButton()
@@ -69,18 +78,7 @@ class RootSheetmusicPagesViewController: UIViewController, UIPageViewControllerD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    var modelController: ModelController {
-        // Return the model controller object, creating it if necessary.
-        // In more complex implementations, the model controller may be passed to the view controller.
-        if _modelController == nil {
-            _modelController = ModelController()
-        }
-        return _modelController!
-    }
-    
-    var _modelController: ModelController? = nil
-    
+
     // MARK: - UIPageViewController delegate methods
     
     func pageViewController(pageViewController: UIPageViewController, spineLocationForInterfaceOrientation orientation: UIInterfaceOrientation) -> UIPageViewControllerSpineLocation {

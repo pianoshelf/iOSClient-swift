@@ -58,10 +58,10 @@ class CenterViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(animated: Bool) {
-        println("Center view appeared")
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        println("making request...")
     }
-    
+
     func addGridView() {
         HTTPClient.sharedInstance.getTopSheetmusic() { (responseObject: NSArray?, error:NSError?) in
             if ((error) != nil) {

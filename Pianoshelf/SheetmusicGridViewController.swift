@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class SheetmusicGridViewController: UICollectionViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class SheetmusicGridViewController: UICollectionViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate {
 
     var sheetmusicList = [Sheetmusic]()
     
@@ -73,10 +73,12 @@ class SheetmusicGridViewController: UICollectionViewController, UICollectionView
 
         return cell
     }
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+    
+    override func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        var sheetmusic = sheetmusicList[indexPath.row]
+        println(sheetmusic.id)
     }
+    
     
     // MARK: UICollectionViewDelegate
 
