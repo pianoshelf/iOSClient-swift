@@ -12,6 +12,7 @@ import Alamofire
 class SheetmusicGridViewController: UICollectionViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate {
 
     var sheetmusicList = [Sheetmusic]()
+    var imageData = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,12 +74,33 @@ class SheetmusicGridViewController: UICollectionViewController, UICollectionView
 
         return cell
     }
-    
-    override func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         var sheetmusic = sheetmusicList[indexPath.row]
-        println(sheetmusic.id)
+        
+        HTTPClient.sharedInstance.getSheetmusicDetail(sheetmusic.id){ (responseObject: NSObject?, error:NSError?) in
+            
+            var imagesResp = responseObject!.valueForKey("images") as NSArray
+            var imageList = SheetmusicPages.sheetmusicPagesWithJSON(imagesResp)
+            
+            self.imageData = imageList
+            self.performSegueWithIdentifier("gridToDetail", sender: self)
+        }
     }
-    
+
+    // this method mush be in first view controller
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "gridToDetail"{
+            var rootViewCtrl = segue.destinationViewController as RootSheetmusicPagesViewController
+
+            // create the model controller with the page data
+            var modelCtrl = ModelController()
+            modelCtrl.pageData = imageData
+            
+            // inject the model controller
+            rootViewCtrl._modelController = modelCtrl
+        }
+    }
     
     // MARK: UICollectionViewDelegate
 
